@@ -1,4 +1,4 @@
-class View {
+class View { // eslint-disable-line no-unused-vars
   static BLANK () {
     return ''
   }

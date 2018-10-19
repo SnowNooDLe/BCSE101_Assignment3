@@ -1,4 +1,4 @@
-class Game {
+class Game { // eslint-disable-line no-unused-vars
   constructor (newWeek = 0, newHomeTeamRank = 0, newAwayTeamRank = 0, newDateTime = 'untimed') {
     this.week = newWeek
     this.homeTeamRank = newHomeTeamRank

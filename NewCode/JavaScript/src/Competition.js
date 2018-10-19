@@ -28,9 +28,8 @@ class Competition { // eslint-disable-line no-unused-vars
     if (newRank <= 7) {
       this.allPDTeams.push(newTeam)
       this.allPDRanks.push(newTeam.rank)
-    }
+    } else {
 // rank between 8~14 are in Championship Division
-    else {
       this.allCDTeams.push(newTeam)
       this.allCDRanks.push(newTeam.rank)
     }

@@ -1,4 +1,4 @@
-class Team {
+class Team { // eslint-disable-line no-unused-vars
   constructor (newRank = 0, newName = 'unnamed', newVenue = 'place', newCity = 'city') {
     this.rank = newRank
     this.name = newName
