@@ -2,6 +2,7 @@ import datetime
 from Game import Game
 from Team import Team
 
+
 # Hence this is just python translated version of competition.js, not gonna leave comments.
 class Competition:
     def __init__(self, new_title, new_year):
@@ -17,7 +18,7 @@ class Competition:
     def addTeam(self, newRank, newName, newVenue, newCity):
         newTeam = Team(newRank, newName, newVenue, newCity)
         self.allTeams.append(newTeam)
-        if (newRank <= 7):
+        if newRank <= 7:
             self.allPDTeams.append(newTeam)
             self.allPDRanks.append(newTeam.rank)
         else:
@@ -56,10 +57,10 @@ class Competition:
         rank = 0
         specificTeamGames = 'Will only display ' + teamName + " team's games\n"
         for aTeam in self.allTeams:
-            if (aTeam.name == teamName):
+            if aTeam.name == teamName:
                 rank = aTeam.rank
         for thatTeam in self.allGames:
-            if (thatTeam.homeTeamRank == rank or thatTeam.awayTeamRank == rank):
+            if thatTeam.homeTeamRank == rank or thatTeam.awayTeamRank == rank:
                 date_time_obj = datetime.datetime.strptime(thatTeam.dateTime, '%Y-%m-%dT%H:%M:%S.%fZ')
                 specificTeamGames += 'Week:' + str(thatTeam.week) + '\n'
                 specificTeamGames += str(date_time_obj.date().strftime("%a %d")) + ', '
@@ -89,7 +90,6 @@ class Competition:
 
         return crossovergames
 
-
     def getAll(self):
         result = ''
         result += '----------- Teams -----------\n'
@@ -100,7 +100,6 @@ class Competition:
         result += self.getCanterburyGames('Canterbury')
         result += '----------- Crossover Games -----------\n'
         result += self.getCrossOverGames()
-
         return result
 
     def __str__(self):

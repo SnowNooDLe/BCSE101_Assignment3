@@ -17,5 +17,5 @@ def setup():
 
 
 if __name__ == '__main__':
-   the_2018_competition = setup()
-   print(the_2018_competition)
+    the_2018_competition = setup()
+    print(the_2018_competition)
