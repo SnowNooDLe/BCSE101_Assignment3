@@ -6,6 +6,8 @@ class Game {  // eslint-disable-line no-unused-vars
     this.myHomeTeam = theHomeTeam
     this.homeTeamScore = 0
     this.awayTeamScore = 0
+    this.homeTeamTries = 0
+    this.awayTeamTries = 0
     this.myAwayTeam = theAwayTeam
     if (theHomeTeam) {
       this.venue = theHomeTeam.getVenue()

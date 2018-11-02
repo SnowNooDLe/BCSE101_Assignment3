@@ -7,6 +7,8 @@ class Competition { // eslint-disable-line no-unused-vars
     this.allMyPremiershipTeams = []
     this.allMyTeams = []
     this.allMyGames = []
+
+    this.allMyResults = []
   }
   addTeam (newRank, newName, newHome, newCity) {
     let aNewTeam = new Team(newRank, newName, newHome, newCity)
@@ -17,8 +19,20 @@ class Competition { // eslint-disable-line no-unused-vars
       this.allMyChampionshipTeams.push(aNewTeam)
     }
   }
+
   findTeamByRank (targetRank) {
     return this.allMyTeams.find((team) => { return team.rank === targetRank })
+  }
+
+  // added code
+  findGame (targetHomeTeamRank, targetAwayTeamRank) {
+    let foundGame = NONE
+    for (let aGame of this.allMyGames) {
+      if (aGame.myHomeTeam.rank === targetHomeTeamRank && aGame.myAwayTeam.rank === targetAwayTeamRank) {
+        foundGame = aGame
+      }
+    }
+    return foundGame
   }
   addGame (newRound, newHomeTeamRank, newAwayTeamRank, newWhenString) { // newYear, newMonth, newDay, newMinute) {
     // let when = new Date(newYear, newMonth, newDay, newMinute)
@@ -55,6 +69,7 @@ class Competition { // eslint-disable-line no-unused-vars
     let result = `${View.NEWLINE()}CANTERBURY GAMES${View.NEWLINE()}`
     for (let aGame of this.allMyGames) {
       if (aGame.hasTeam('Canterbury')) {
+        console.log(this.allMyGames.indexOf(aGame))
         result += aGame.get() + View.NEWLINE()
       }
     }
@@ -71,10 +86,11 @@ class Competition { // eslint-disable-line no-unused-vars
     return result
   }
   getAll () {
-    let result = this.getDivisions()
-    result += this.getGames()
-    result += this.getCanterburyGames()
-    result += this.getCrossOverGames()
+    let result = this.getGames()
+    // let result = this.getDivisions()
+    // result += this.getGames()
+    // result += this.getCanterburyGames()
+    // result += this.getCrossOverGames()
     return result
   }
 }
