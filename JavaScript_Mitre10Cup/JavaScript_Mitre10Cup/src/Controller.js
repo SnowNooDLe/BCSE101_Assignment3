@@ -310,7 +310,8 @@ class Controller { // eslint-disable-line no-unused-vars
         },
         {
           'week': 5,
-          'homeTeamRank': 14,
+          // to check later whether it was 14 or 4
+          'homeTeamRank': 4,
           'awayTeamRank': 9,
           'dateTime': '2018-09-16T14:05:00.000Z'
         },
