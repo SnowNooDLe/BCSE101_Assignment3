@@ -1246,5 +1246,8 @@ class Controller { // eslint-disable-line no-unused-vars
   static addResults(the2018Competition){
     let resultsData = Controller.getResultJSON()
     let allResults = resultsData.results
+    for (let aResult of allResults) {
+      the2018Competition.setResult(aResult.)
+    }
   }
 }
