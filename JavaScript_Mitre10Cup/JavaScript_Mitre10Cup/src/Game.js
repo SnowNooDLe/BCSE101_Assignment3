@@ -17,8 +17,8 @@ class Game {  // eslint-disable-line no-unused-vars
   }
 
   setResult (newTeamAScore, newTeamBScore) {
-    this.teamAScore = newTeamAScore
-    this.teamBScore = newTeamBScore
+    this.homeTeamScore = newTeamAScore
+    this.awayTeamScore = newTeamBScore
   }
 
   getDate (aDate) {
@@ -61,6 +61,18 @@ class Game {  // eslint-disable-line no-unused-vars
     let padding = View.SPACES(paddingNeeded)
     result += padding
     result += `${this.getTime(this.when)} ${this.getMonth(this.when)}${View.NEWLINE()}${View.TAB()}${this.myHomeTeam.name} v ${this.myAwayTeam.name} at ${this.venue}`
+    return result
+  }
+  // added code
+  getResult () {
+    let result = this.getDate(this.when)
+    let paddingNeeded = 13 - result.length
+    let padding = View.SPACES(paddingNeeded)
+    result += padding
+    // console.log("Whats my score")
+    // console.log(this.homeTeamScore)
+    result += `Result between ${this.myHomeTeam.name} vs ${this.myAwayTeam.name} is ${this.homeTeamScore} : ${this.awayTeamScore}`
+    // console.log(result)
     return result
   }
   hasTeam (targetTeamName) {

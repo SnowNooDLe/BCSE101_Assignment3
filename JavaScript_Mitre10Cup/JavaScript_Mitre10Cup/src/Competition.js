@@ -26,7 +26,7 @@ class Competition { // eslint-disable-line no-unused-vars
 
   // added code
   findGame (targetHomeTeamRank, targetAwayTeamRank) {
-    let foundGame = NONE
+    let foundGame
     for (let aGame of this.allMyGames) {
       if (aGame.myHomeTeam.rank === targetHomeTeamRank && aGame.myAwayTeam.rank === targetAwayTeamRank) {
         foundGame = aGame
@@ -34,6 +34,13 @@ class Competition { // eslint-disable-line no-unused-vars
     }
     return foundGame
   }
+
+  addResult (homeTeamRank, awayTeamRank, homeTeamScore, awayTeamScore) {
+    let aGame = this.findGame(homeTeamRank, awayTeamRank)
+    aGame.setResult(homeTeamScore, awayTeamScore)
+  }
+
+
   addGame (newRound, newHomeTeamRank, newAwayTeamRank, newWhenString) { // newYear, newMonth, newDay, newMinute) {
     // let when = new Date(newYear, newMonth, newDay, newMinute)
     let when = new Date(newWhenString)
@@ -62,6 +69,7 @@ class Competition { // eslint-disable-line no-unused-vars
         result += `Week ${week}. ${aGame.getWhen()} - ${aGame.getSunday()}${View.NEWLINE()}`
       }
       result += aGame + View.NEWLINE()
+      result += aGame.getResult() + View.NEWLINE()
     }
     return result
   }

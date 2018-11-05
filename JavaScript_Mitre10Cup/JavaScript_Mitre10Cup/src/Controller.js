@@ -1230,6 +1230,7 @@ class Controller { // eslint-disable-line no-unused-vars
   static setup () {
     let the2018Competition = new Competition('Mitre 10 Cup', 2018)
     let competitionData = Controller.getJSON()
+    let resultsData = Controller.getResultJSON()
 
     let allTeams = competitionData.teams
     for (let aTeam of allTeams) {
@@ -1240,14 +1241,19 @@ class Controller { // eslint-disable-line no-unused-vars
     for (let aGame of allGames) {
       the2018Competition.addGame(aGame.week, aGame.homeTeamRank, aGame.awayTeamRank, aGame.dateTime)
     }
+
+    let allResults = resultsData.results
+    for (let aResult of allResults) {
+      the2018Competition.addResult(aResult.homeTeamRank, aResult.awayTeamRank, aResult.homeTeamScore, aResult.awayTeamScore)
+    }
     return the2018Competition
   }
 
-  static addResults(the2018Competition){
-    let resultsData = Controller.getResultJSON()
-    let allResults = resultsData.results
-    for (let aResult of allResults) {
-      the2018Competition.setResult(aResult.)
-    }
-  }
+  // static addResults(the2018Competition){
+  //
+  //   let allResults = resultsData.results
+  //   for (let aResult of allResults) {
+  //     the2018Competition.setResult(aResult.homeTeamRank, aResult.awayTeamRank)
+  //   }
+  // }
 }
