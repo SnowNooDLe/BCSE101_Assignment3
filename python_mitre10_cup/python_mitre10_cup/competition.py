@@ -11,6 +11,7 @@ class Competition(object):
         self.all_games = []
         self.all_teams = []
         self.teamCount = 0  # used to separate Premiership and Championship teams by rank
+        self.allMyResults = []
 
     def add_team(self, new_rank, new_name, new_venue, new_city):
         self.teamCount += 1
@@ -23,6 +24,14 @@ class Competition(object):
 
     def get_team_by_rank(self, target_rank):
         return self.all_teams[target_rank]
+
+    # added code by Tom Son
+    def find_game_add_result(self, homeTeamRank, awayTeamRank, homeTeamScore, awayTeamScore):
+        for aGame in self.all_games:
+            if (aGame.home_team.rank == homeTeamRank and aGame.away_team.rank == awayTeamRank):
+                aGame.set_result(homeTeamScore, awayTeamScore)
+
+
 
     def add_game(self, new_round, new_home_team_rank, new_away_team_rank, new_when_is8601string):
         import dateutil.parser
@@ -52,6 +61,7 @@ class Competition(object):
                 pretty_sunday_date = sunday_date.strftime('%A %d %B')
                 result += f'Week {week}. {pretty_first_game_date} - {pretty_sunday_date}\n'
             result += str(a_game) + '\n'
+            result += f'\t{str(a_game.homeTeamScore)} : {str(a_game.awayTeamScore)}' + '\n'
         return result
 
     def get_canterbury_games(self):
@@ -71,8 +81,8 @@ class Competition(object):
     def __str__(self):
         result = self.get_divisions()
         result += self.get_games()
-        result += self.get_canterbury_games()
-        result += self.get_cross_over_games()
+        # result += self.get_canterbury_games()
+        # result += self.get_cross_over_games()
         return result
 
     def get(self):

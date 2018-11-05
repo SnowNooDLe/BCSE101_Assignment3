@@ -28,6 +28,7 @@ class Competition { // eslint-disable-line no-unused-vars
   findGame (targetHomeTeamRank, targetAwayTeamRank) {
     let foundGame
     for (let aGame of this.allMyGames) {
+      console.log(aGame)
       if (aGame.myHomeTeam.rank === targetHomeTeamRank && aGame.myAwayTeam.rank === targetAwayTeamRank) {
         foundGame = aGame
       }

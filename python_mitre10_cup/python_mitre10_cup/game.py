@@ -4,6 +4,8 @@ class Game(object):
         self.when = new_date
         self.home_team = the_home_team
         self.away_team = the_away_team
+        self.homeTeamScore = 0
+        self.awayTeamScore = 0
         if the_home_team:
             self.venue = the_home_team.get_venue()
 
@@ -36,3 +38,7 @@ class Game(object):
         away_division = (self.away_team.rank - 1 ) // 7
         is_different_division = home_division != away_division
         return is_different_division
+
+    def set_result(self, newTeamAScore, newTeamBScore):
+        self.homeTeamScore = newTeamAScore
+        self.awayTeamScore = newTeamBScore
