@@ -46,15 +46,15 @@ class Competition { // eslint-disable-line no-unused-vars
     return foundGame
   }
 
-  addResult (homeTeamRank, awayTeamRank, homeTeamScore, awayTeamScore) {
+  addResult (homeTeamRank, awayTeamRank, homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries) {
     let aGame = this.findGame(homeTeamRank, awayTeamRank)
-    aGame.setResult(homeTeamScore, awayTeamScore)
+    // aGame.setResult(homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries)
     // console.log(aGame)
     if (homeTeamScore > awayTeamScore) {
       aGame.myHomeTeam.win += 1
       aGame.myAwayTeam.lose += 1
     }
-    else if (homeTeamScore === awayTeamScore) {
+    else if (homeTeamScore == awayTeamScore) {
       aGame.myHomeTeam.draw += 1
       aGame.myAwayTeam.draw += 1
     }
@@ -62,20 +62,29 @@ class Competition { // eslint-disable-line no-unused-vars
       aGame.myHomeTeam.lose += 1
       aGame.myAwayTeam.win += 1
     }
-    aGame.addingScores(aGame, homeTeamScore, awayTeamScore)
+    aGame.addingScores(aGame, homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries)
     // console.log(aGame.myHomeTeam.lose)
   }
 
   getStandings() {
     let result = `${View.NEWLINE()}TEAMS${View.NEWLINE()}Premiership Division${View.NEWLINE()}`
+    // sort doesnt seem working on latest chrome just like pratice test materials.
+
+    this.allMyPremiershipTeams.sort(function(a, b){return a.win - b.win});
     this.premiershipTeamRankSort()
     for (let aTeam of this.allMyPremiershipTeams) {
-      result += `${aTeam.rank} ${aTeam.name} ${aTeam.win} ${aTeam.draw} ${aTeam.lose} | ${aTeam.for} ${aTeam.against} ${aTeam.diff} ${View.NEWLINE()}`
+      aTeam.getDiff()
+      aTeam.getPoints()
+      result += `${aTeam.rank} ${aTeam.name} ${aTeam.win} ${aTeam.draw} LOSS: ${aTeam.lose} | ${aTeam.for} ${aTeam.against} ${aTeam.diff} `
+      result += `| ${aTeam.BP1} BP2: ${aTeam.BP2} POINTS: ${aTeam.points} ${View.NEWLINE()}`
     }
     result += 'Championship Division' + View.NEWLINE()
     this.championshipTeamRankSrot()
     for (let aTeam of this.allMyChampionshipTeams) {
-      result += `${aTeam.rank} ${aTeam.name} ${aTeam.win} ${aTeam.draw} ${aTeam.lose} | ${aTeam.for} ${aTeam.against} ${aTeam.diff} ${View.NEWLINE()}`
+      aTeam.getDiff()
+      aTeam.getPoints()
+      result += `${aTeam.rank} ${aTeam.name} ${aTeam.win} ${aTeam.draw} LOSS: ${aTeam.lose} | ${aTeam.for} ${aTeam.against} ${aTeam.diff} `
+      result += `| ${aTeam.BP1} BP2: ${aTeam.BP2} POINTS: ${aTeam.points} ${View.NEWLINE()}`
     }
     return result
   }

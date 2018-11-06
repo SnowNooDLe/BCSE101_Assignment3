@@ -21,6 +21,8 @@ class Game {  // eslint-disable-line no-unused-vars
   setResult (newTeamAScore, newTeamBScore) {
     this.homeTeamScore = newTeamAScore
     this.awayTeamScore = newTeamBScore
+    this.homeTeamTries = newTeamATries
+    this.awayTeamTries = newTeamBTries
   }
 
   getDate (aDate) {
@@ -78,12 +80,26 @@ class Game {  // eslint-disable-line no-unused-vars
     return result
   }
 
-  addingScores (aGame, homeTeamScore, awayTeamScore) {
+  addingScores (aGame, homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries) {
     aGame.myHomeTeam.for += homeTeamScore
     aGame.myHomeTeam.against += awayTeamScore
+    if (homeTeamTries >= 4) {
+      aGame.myHomeTeam.BP1 += 1
+    }
+
+    if (awayTeamScore - homeTeamScore <= 7 && awayTeamScore - homeTeamScore >= 1 ) {
+      aGame.myHomeTeam.BP2 += 1
+    }
 
     aGame.myAwayTeam.for += awayTeamScore
     aGame.myAwayTeam.against += homeTeamScore
+    if (awayTeamTries >= 4) {
+      aGame.myAwayTeam.BP1 += 1
+    }
+
+    if (homeTeamScore - awayTeamScore <= 7 && homeTeamScore - awayTeamScore >= 1 ) {
+      aGame.myAwayTeam.BP2 += 1
+    }
   }
   // ----------------------------------------------------
   hasTeam (targetTeamName) {

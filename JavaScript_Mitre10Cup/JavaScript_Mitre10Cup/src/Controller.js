@@ -1244,7 +1244,7 @@ class Controller { // eslint-disable-line no-unused-vars
 
     let allResults = resultsData.results
     for (let aResult of allResults) {
-      the2018Competition.addResult(aResult.homeTeamRank, aResult.awayTeamRank, aResult.homeTeamScore, aResult.awayTeamScore)
+      the2018Competition.addResult(aResult.homeTeamRank, aResult.awayTeamRank, aResult.homeTeamScore, aResult.awayTeamScore, aResult.homeTeamTries, aResult.awayTeamTries)
     }
     return the2018Competition
   }
