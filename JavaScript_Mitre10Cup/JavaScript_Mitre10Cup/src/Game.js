@@ -4,10 +4,12 @@ class Game {  // eslint-disable-line no-unused-vars
     this.round = newRound
     this.when = newWhen
     this.myHomeTeam = theHomeTeam
+    // added code
     this.homeTeamScore = 0
     this.awayTeamScore = 0
     this.homeTeamTries = 0
     this.awayTeamTries = 0
+
     this.myAwayTeam = theAwayTeam
     if (theHomeTeam) {
       this.venue = theHomeTeam.getVenue()
@@ -75,6 +77,15 @@ class Game {  // eslint-disable-line no-unused-vars
     // console.log(result)
     return result
   }
+
+  addingScores (aGame, homeTeamScore, awayTeamScore) {
+    aGame.myHomeTeam.for += homeTeamScore
+    aGame.myHomeTeam.against += awayTeamScore
+
+    aGame.myAwayTeam.for += awayTeamScore
+    aGame.myAwayTeam.against += homeTeamScore
+  }
+  // ----------------------------------------------------
   hasTeam (targetTeamName) {
     return this.myHomeTeam.name === targetTeamName || this.myAwayTeam.name === targetTeamName
   }
