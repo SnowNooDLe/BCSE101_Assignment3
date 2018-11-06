@@ -26,12 +26,25 @@ class Competition(object):
         return self.all_teams[target_rank]
 
     # added code by Tom Son
-    def find_game_add_result(self, homeTeamRank, awayTeamRank, homeTeamScore, awayTeamScore):
+    def find_game_add_result(self, homeTeamRank, awayTeamRank, homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries):
         for aGame in self.all_games:
             if (aGame.home_team.rank == homeTeamRank and aGame.away_team.rank == awayTeamRank):
-                aGame.set_result(homeTeamScore, awayTeamScore)
+                # aGame.set_result(homeTeamScore, awayTeamScore)
+                if (homeTeamScore > awayTeamScore):
+                    aGame.home_team.win += 1
+                    aGame.away_team.lose += 1
 
+                elif (homeTeamScore == awayTeamScore):
+                    aGame.home_team.draw += 1
+                    aGame.away_team.draw += 1
 
+                else:
+                    aGame.home_team.lose += 1
+                    aGame.away_team.win += 1
+
+                aGame.adding_scores(aGame, homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries)
+
+    #  ----------------------------------------------------------------------------------------------------------------
 
     def add_game(self, new_round, new_home_team_rank, new_away_team_rank, new_when_is8601string):
         import dateutil.parser
@@ -77,12 +90,28 @@ class Competition(object):
             if a_game.is_crossover():
                 result += a_game.get() + '\n'
         return result
+    # added by Tom Son
+    def get_standings(self):
+        result = '\nTEAMS\nPremiership Division\n'
+        self.all_premiership_teams.sort(key=lambda team: team.win, reverse=True)
+        for team in self.all_premiership_teams:
+            team.getDiff()
+            team.getPoints()
+            result += f'\t{team.name} {team.win} {team.draw} {team.lose} | {team.scored} {team.against} {team.diff} | {team.BP1} {team.BP2} {team.points}\n'
+        result += 'Championship Division\n'
+        self.all_championship_teams.sort(key=lambda team: team.win, reverse=True)
+        for team in self.all_championship_teams:
+            team.getDiff()
+            team.getPoints()
+            result += f'\t{team.name} {team.win} {team.draw} {team.lose} | {team.scored} {team.against} {team.diff} | {team.BP1} {team.BP2} {team.points}\n'
+        return result
 
     def __str__(self):
         result = self.get_divisions()
-        result += self.get_games()
+        # result += self.get_games()
         # result += self.get_canterbury_games()
         # result += self.get_cross_over_games()
+        result += self.get_standings()
         return result
 
     def get(self):

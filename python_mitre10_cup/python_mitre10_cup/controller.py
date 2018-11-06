@@ -16,7 +16,7 @@ def setup():
 
     all_results = results_data['results']
     for result in all_results:
-        a_competition.find_game_add_result(result['homeTeamRank'], result['awayTeamRank'], result['homeTeamScore'], result['awayTeamScore'])
+        a_competition.find_game_add_result(result['homeTeamRank'], result['awayTeamRank'], result['homeTeamScore'], result['awayTeamScore'], result['homeTeamTries'], result['awayTeamTries'])
     return a_competition
 
 

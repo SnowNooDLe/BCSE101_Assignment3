@@ -22,8 +22,8 @@ class Team { // eslint-disable-line no-unused-vars
   }
   getPoints (){
     this.points = this.win * 4 + this.draw + this.BP1 + this.BP2
-
   }
+  // --------------------------------------------------------------------------
   getVenue () {
     return `${this.venue} ${this.city}`
   }

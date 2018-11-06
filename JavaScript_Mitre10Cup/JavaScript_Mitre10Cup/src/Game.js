@@ -101,7 +101,7 @@ class Game {  // eslint-disable-line no-unused-vars
       aGame.myAwayTeam.BP2 += 1
     }
   }
-  // ----------------------------------------------------
+  // --------------------------------------------------------------------------
   hasTeam (targetTeamName) {
     return this.myHomeTeam.name === targetTeamName || this.myAwayTeam.name === targetTeamName
   }

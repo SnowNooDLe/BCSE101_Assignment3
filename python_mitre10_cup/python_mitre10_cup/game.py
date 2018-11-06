@@ -42,3 +42,23 @@ class Game(object):
     def set_result(self, newTeamAScore, newTeamBScore):
         self.homeTeamScore = newTeamAScore
         self.awayTeamScore = newTeamBScore
+
+#    code added by Tom Son
+    def adding_scores (self, aGame, homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries):
+        aGame.home_team.scored += homeTeamScore
+        aGame.home_team.against += awayTeamScore
+        if (homeTeamTries >= 4):
+            aGame.home_team.BP1 += 1
+
+        if (awayTeamScore - homeTeamScore <= 7 and awayTeamScore - homeTeamScore >= 1):
+            aGame.home_team.BP2 += 1
+
+        aGame.away_team.scored += awayTeamScore
+        aGame.away_team.against += homeTeamScore
+        if (awayTeamTries >= 4):
+            aGame.away_team.BP1 += 1
+
+        if (homeTeamScore - awayTeamScore <= 7 and homeTeamScore - awayTeamScore >= 1):
+            aGame.away_team.BP2 += 1
+
+

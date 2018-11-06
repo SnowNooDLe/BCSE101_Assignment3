@@ -25,17 +25,6 @@ class Competition { // eslint-disable-line no-unused-vars
   }
 
   // added code
-  premiershipTeamRankSort () {
-    this.allMyPremiershipTeams.sort(function (a, b) {
-      return a.win > b.win
-    })
-  }
-
-  championshipTeamRankSrot () {
-    this.allMyChampionshipTeams.sort(function (a, b) {
-      return a.win > b.win
-    })
-  }
   findGame (targetHomeTeamRank, targetAwayTeamRank) {
     let foundGame
     for (let aGame of this.allMyGames) {
@@ -68,27 +57,24 @@ class Competition { // eslint-disable-line no-unused-vars
 
   getStandings() {
     let result = `${View.NEWLINE()}TEAMS${View.NEWLINE()}Premiership Division${View.NEWLINE()}`
-    // sort doesnt seem working on latest chrome just like pratice test materials.
-
-    this.allMyPremiershipTeams.sort(function(a, b){return a.win - b.win});
-    this.premiershipTeamRankSort()
+    this.allMyPremiershipTeams.sort(function(a, b){return b.win-a.win});
     for (let aTeam of this.allMyPremiershipTeams) {
       aTeam.getDiff()
       aTeam.getPoints()
-      result += `${aTeam.rank} ${aTeam.name} ${aTeam.win} ${aTeam.draw} LOSS: ${aTeam.lose} | ${aTeam.for} ${aTeam.against} ${aTeam.diff} `
-      result += `| ${aTeam.BP1} BP2: ${aTeam.BP2} POINTS: ${aTeam.points} ${View.NEWLINE()}`
+      result += `TEAM: ${aTeam.name} WIN: ${aTeam.win} DRAW: ${aTeam.draw} LOSS: ${aTeam.lose} | FOR: ${aTeam.for} AGAINST: ${aTeam.against} DIFF: ${aTeam.diff} `
+      result += `| BP1: ${aTeam.BP1} BP2: ${aTeam.BP2} POINTS: ${aTeam.points} ${View.NEWLINE()}`
     }
     result += 'Championship Division' + View.NEWLINE()
-    this.championshipTeamRankSrot()
+    this.allMyChampionshipTeams.sort(function(a, b){return b.win-a.win});
     for (let aTeam of this.allMyChampionshipTeams) {
       aTeam.getDiff()
       aTeam.getPoints()
-      result += `${aTeam.rank} ${aTeam.name} ${aTeam.win} ${aTeam.draw} LOSS: ${aTeam.lose} | ${aTeam.for} ${aTeam.against} ${aTeam.diff} `
-      result += `| ${aTeam.BP1} BP2: ${aTeam.BP2} POINTS: ${aTeam.points} ${View.NEWLINE()}`
+      result += `TEAM: ${aTeam.name} WIN: ${aTeam.win} DRAW: ${aTeam.draw} LOSS: ${aTeam.lose} | FOR: ${aTeam.for} AGAINST: ${aTeam.against} DIFF: ${aTeam.diff} `
+      result += `| BP1: ${aTeam.BP1} BP2: ${aTeam.BP2} POINTS: ${aTeam.points} ${View.NEWLINE()}`
     }
     return result
   }
-  //  --------------------------------------
+  // --------------------------------------------------------------------------
 
   addGame (newRound, newHomeTeamRank, newAwayTeamRank, newWhenString) { // newYear, newMonth, newDay, newMinute) {
     // let when = new Date(newYear, newMonth, newDay, newMinute)
