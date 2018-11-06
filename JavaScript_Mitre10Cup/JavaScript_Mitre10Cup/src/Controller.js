@@ -1249,11 +1249,4 @@ class Controller { // eslint-disable-line no-unused-vars
     return the2018Competition
   }
 
-  // static addResults(the2018Competition){
-  //
-  //   let allResults = resultsData.results
-  //   for (let aResult of allResults) {
-  //     the2018Competition.setResult(aResult.homeTeamRank, aResult.awayTeamRank)
-  //   }
-  // }
 }
