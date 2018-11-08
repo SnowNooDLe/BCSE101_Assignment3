@@ -28,6 +28,12 @@ class Competition { // eslint-disable-line no-unused-vars
   findGame (targetHomeTeamRank, targetAwayTeamRank) {
     let foundGame
     for (let aGame of this.allMyGames) {
+      // try to match the dateTime based on given addREsult.js but doesnt seem working
+      // will provide photo of console.log seperate
+      // console.log(aGame.when)
+      // console.log(targetDateTime)
+      // console.log(aGame.when - targetDateTime)
+      // console.log(aGame.when == targetDateTime)
       if (aGame.myHomeTeam.rank === targetHomeTeamRank && aGame.myAwayTeam.rank === targetAwayTeamRank) {
         foundGame = aGame
       }
@@ -36,6 +42,7 @@ class Competition { // eslint-disable-line no-unused-vars
   }
 
   addResult (homeTeamRank, awayTeamRank, homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries) {
+    // console.log(when)
     let aGame = this.findGame(homeTeamRank, awayTeamRank)
     // aGame.setResult(homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries)
     // console.log(aGame)
@@ -56,7 +63,8 @@ class Competition { // eslint-disable-line no-unused-vars
   }
 
   getStandings() {
-    let result = `${View.NEWLINE()}TEAMS${View.NEWLINE()}Premiership Division${View.NEWLINE()}`
+    let result = `${View.NEWLINE()}Get Standings ${View.NEWLINE()}Premiership Division${View.NEWLINE()}`
+    // Mike emailed me to order in points, but unfortunately, points not working like we had issue during practical test.
     this.allMyPremiershipTeams.sort(function(a, b){return b.win-a.win});
     for (let aTeam of this.allMyPremiershipTeams) {
       aTeam.getDiff()

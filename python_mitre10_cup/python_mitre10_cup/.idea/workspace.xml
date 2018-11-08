@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="52c72ff4-9b04-445c-bc9b-80d7cd9f938a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/competition.py" beforeDir="false" afterPath="$PROJECT_DIR$/competition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team.py" beforeDir="false" afterPath="$PROJECT_DIR$/team.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../report.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../report.docx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +17,7 @@
     <session id="714098389">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="1" />
@@ -41,12 +38,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2398" />
+          <entry key="py" value="2415" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2398" />
+          <entry key="Python" value="2415" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -69,12 +66,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/competition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="77" column="145" selection-start-line="77" selection-start-column="145" selection-end-line="77" selection-end-column="145" />
+            <state relative-caret-position="263">
+              <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1541665477358" expanded="true" signature="1895:1901" ph="..." />
-                <marker date="1541665477358" expanded="true" signature="3926:4735" ph="..." />
+                <marker date="1541669608910" expanded="true" signature="1895:1901" ph="..." />
+                <marker date="1541669608910" expanded="true" signature="3926:4743" ph="..." />
               </folding>
             </state>
           </provider>
@@ -128,7 +125,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="760" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -256,14 +253,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.50641024" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296146" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44191095" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.44191095" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3995943" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -370,12 +366,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/competition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="77" column="145" selection-start-line="77" selection-start-column="145" selection-end-line="77" selection-end-column="145" />
+        <state relative-caret-position="263">
+          <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <marker date="1541665477358" expanded="true" signature="1895:1901" ph="..." />
-            <marker date="1541665477358" expanded="true" signature="3926:4735" ph="..." />
+            <marker date="1541669608910" expanded="true" signature="1895:1901" ph="..." />
+            <marker date="1541669608910" expanded="true" signature="3926:4743" ph="..." />
           </folding>
         </state>
       </provider>

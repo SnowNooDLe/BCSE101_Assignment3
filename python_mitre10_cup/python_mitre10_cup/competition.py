@@ -93,7 +93,7 @@ class Competition(object):
         return result
     #    code added by Tom Son
     def get_standings(self):
-        result = '\nTEAMS\nPremiership Division\n'
+        result = '\nGet Standings\nPremiership Division\n'
         self.all_premiership_teams.sort(key=lambda team: team.win, reverse=True)
         for team in self.all_premiership_teams:
             team.getDiff()
