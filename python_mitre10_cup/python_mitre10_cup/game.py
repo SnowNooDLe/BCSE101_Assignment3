@@ -45,6 +45,7 @@ class Game(object):
 
 #    code added by Tom Son
     def adding_scores (self, aGame, homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries):
+        self.set_result(homeTeamScore, awayTeamScore)
         aGame.home_team.scored += homeTeamScore
         aGame.home_team.against += awayTeamScore
         if (homeTeamTries >= 4):

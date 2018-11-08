@@ -128,12 +128,11 @@ class Competition { // eslint-disable-line no-unused-vars
     return result
   }
   getAll () {
-    // let result = this.getGames()
-    let result = this.getStandings()
-    // let result = this.getDivisions()
-    // result += this.getGames()
+    let result = this.getDivisions()
+    result += this.getGames()
     // result += this.getCanterburyGames()
     // result += this.getCrossOverGames()
+    result += this.getStandings()
     return result
   }
 }

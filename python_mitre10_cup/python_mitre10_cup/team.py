@@ -4,7 +4,7 @@ class Team(object):
         self.name = new_name
         self.venue = new_venue
         self.city = new_city
-    #     added code
+        #    code added by Tom Son
         self.win = 0
         self.draw = 0
         self.lose = 0
@@ -23,6 +23,7 @@ class Team(object):
     def get_venue(self):
         return self.venue.ljust(35) + self.city
 
+    #    code added by Tom Son
     def getDiff(self):
         self.diff = self.scored - self.against
 

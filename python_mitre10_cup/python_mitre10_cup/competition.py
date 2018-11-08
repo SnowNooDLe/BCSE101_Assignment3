@@ -25,7 +25,7 @@ class Competition(object):
     def get_team_by_rank(self, target_rank):
         return self.all_teams[target_rank]
 
-    # added code by Tom Son
+    #    code added by Tom Son
     def find_game_add_result(self, homeTeamRank, awayTeamRank, homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries):
         for aGame in self.all_games:
             if (aGame.home_team.rank == homeTeamRank and aGame.away_team.rank == awayTeamRank):
@@ -74,7 +74,8 @@ class Competition(object):
                 pretty_sunday_date = sunday_date.strftime('%A %d %B')
                 result += f'Week {week}. {pretty_first_game_date} - {pretty_sunday_date}\n'
             result += str(a_game) + '\n'
-            result += f'\t{str(a_game.homeTeamScore)} : {str(a_game.awayTeamScore)}' + '\n'
+            #    code added by Tom Son
+            result += f'\t{str(a_game.home_team.name)} {str(a_game.homeTeamScore)} : {str(a_game.awayTeamScore)} {str(a_game.away_team.name)} \n'
         return result
 
     def get_canterbury_games(self):
@@ -90,7 +91,7 @@ class Competition(object):
             if a_game.is_crossover():
                 result += a_game.get() + '\n'
         return result
-    # added by Tom Son
+    #    code added by Tom Son
     def get_standings(self):
         result = '\nTEAMS\nPremiership Division\n'
         self.all_premiership_teams.sort(key=lambda team: team.win, reverse=True)
@@ -108,7 +109,7 @@ class Competition(object):
 
     def __str__(self):
         result = self.get_divisions()
-        # result += self.get_games()
+        result += self.get_games()
         # result += self.get_canterbury_games()
         # result += self.get_cross_over_games()
         result += self.get_standings()

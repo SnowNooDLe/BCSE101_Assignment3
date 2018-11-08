@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52c72ff4-9b04-445c-bc9b-80d7cd9f938a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../../JavaScript_Mitre10Cup/JavaScript_Mitre10Cup/src/Competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaScript_Mitre10Cup/JavaScript_Mitre10Cup/src/Competition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaScript_Mitre10Cup/JavaScript_Mitre10Cup/src/Controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaScript_Mitre10Cup/JavaScript_Mitre10Cup/src/Controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaScript_Mitre10Cup/JavaScript_Mitre10Cup/src/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaScript_Mitre10Cup/JavaScript_Mitre10Cup/src/Game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaScript_Mitre10Cup/JavaScript_Mitre10Cup/src/Team.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaScript_Mitre10Cup/JavaScript_Mitre10Cup/src/Team.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/competition.py" beforeDir="false" afterPath="$PROJECT_DIR$/competition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/team.py" beforeDir="false" afterPath="$PROJECT_DIR$/team.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../report.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../report.docx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,9 +22,9 @@
         <counts>
           <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -45,12 +41,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2305" />
+          <entry key="py" value="2398" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2305" />
+          <entry key="Python" value="2398" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -58,11 +54,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="42" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="42" />
+            <state relative-caret-position="418">
+              <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -70,15 +66,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/competition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="102" column="48" lean-forward="true" selection-start-line="102" selection-start-column="48" selection-end-line="102" selection-end-column="48" />
+            <state relative-caret-position="198">
+              <caret line="77" column="145" selection-start-line="77" selection-start-column="145" selection-end-line="77" selection-end-column="145" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1541503384414" expanded="true" signature="1892:1898" ph="..." />
-                <marker date="1541503384414" expanded="true" signature="3822:4631" ph="..." />
+                <marker date="1541665477358" expanded="true" signature="1895:1901" ph="..." />
+                <marker date="1541665477358" expanded="true" signature="3926:4735" ph="..." />
               </folding>
             </state>
           </provider>
@@ -87,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="76">
+              <caret line="4" column="22" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -96,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/team.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+            <state relative-caret-position="114">
+              <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -132,7 +128,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="760" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -259,14 +255,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="760" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.50641024" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296146" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.44298247" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44191095" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3995943" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -347,38 +344,38 @@
     <entry file="file://$PROJECT_DIR$/BETTERresultsJSON.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/competition.py">
+    <entry file="file://$PROJECT_DIR$/controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="102" column="48" lean-forward="true" selection-start-line="102" selection-start-column="48" selection-end-line="102" selection-end-column="48" />
+        <state relative-caret-position="418">
+          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1541503384414" expanded="true" signature="1892:1898" ph="..." />
-            <marker date="1541503384414" expanded="true" signature="3822:4631" ph="..." />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="76">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/team.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        <state relative-caret-position="114">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller.py">
+    <entry file="file://$PROJECT_DIR$/competition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="42" />
+        <state relative-caret-position="198">
+          <caret line="77" column="145" selection-start-line="77" selection-start-column="145" selection-end-line="77" selection-end-column="145" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1541665477358" expanded="true" signature="1895:1901" ph="..." />
+            <marker date="1541665477358" expanded="true" signature="3926:4735" ph="..." />
           </folding>
         </state>
       </provider>

@@ -21,8 +21,6 @@ class Game {  // eslint-disable-line no-unused-vars
   setResult (newTeamAScore, newTeamBScore) {
     this.homeTeamScore = newTeamAScore
     this.awayTeamScore = newTeamBScore
-    this.homeTeamTries = newTeamATries
-    this.awayTeamTries = newTeamBTries
   }
 
   getDate (aDate) {
@@ -75,12 +73,13 @@ class Game {  // eslint-disable-line no-unused-vars
     result += padding
     // console.log("Whats my score")
     // console.log(this.homeTeamScore)
-    result += `Result between ${this.myHomeTeam.name} vs ${this.myAwayTeam.name} is ${this.homeTeamScore} : ${this.awayTeamScore}`
+    result += `Result is ${this.myHomeTeam.name} ${this.homeTeamScore} : ${this.awayTeamScore} ${this.myAwayTeam.name}`
     // console.log(result)
     return result
   }
 
   addingScores (aGame, homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries) {
+    this.setResult(homeTeamScore, awayTeamScore)
     aGame.myHomeTeam.for += homeTeamScore
     aGame.myHomeTeam.against += awayTeamScore
     if (homeTeamTries >= 4) {
