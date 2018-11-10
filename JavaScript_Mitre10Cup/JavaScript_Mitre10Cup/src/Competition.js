@@ -7,8 +7,6 @@ class Competition { // eslint-disable-line no-unused-vars
     this.allMyPremiershipTeams = []
     this.allMyTeams = []
     this.allMyGames = []
-
-    this.allMyResults = []
   }
   addTeam (newRank, newName, newHome, newCity) {
     let aNewTeam = new Team(newRank, newName, newHome, newCity)
@@ -41,12 +39,6 @@ class Competition { // eslint-disable-line no-unused-vars
     return foundGame
   }
 
-<<<<<<< HEAD
-  setResult() {
-    
-  }
-  // until here
-=======
   addResult (homeTeamRank, awayTeamRank, homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries) {
     // console.log(when)
     let aGame = this.findGame(homeTeamRank, awayTeamRank)
@@ -90,7 +82,6 @@ class Competition { // eslint-disable-line no-unused-vars
   }
   // --------------------------------------------------------------------------
 
->>>>>>> 40694a36b672f84c71c2e244a59b51f3ceded6ff
   addGame (newRound, newHomeTeamRank, newAwayTeamRank, newWhenString) { // newYear, newMonth, newDay, newMinute) {
     // let when = new Date(newYear, newMonth, newDay, newMinute)
     let when = new Date(newWhenString)

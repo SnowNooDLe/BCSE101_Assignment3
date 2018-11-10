@@ -1230,11 +1230,6 @@ class Controller { // eslint-disable-line no-unused-vars
     let the2018Competition = new Competition('Mitre 10 Cup', 2018)
     let competitionData = Controller.getJSON()
     let resultsData = Controller.getResultJSON()
-<<<<<<< HEAD
-    let allResults = resultsData.results
-    console.log(allResults)
-=======
->>>>>>> 40694a36b672f84c71c2e244a59b51f3ceded6ff
 
     let allTeams = competitionData.teams
     for (let aTeam of allTeams) {
@@ -1246,15 +1241,6 @@ class Controller { // eslint-disable-line no-unused-vars
       the2018Competition.addGame(aGame.week, aGame.homeTeamRank, aGame.awayTeamRank, aGame.dateTime)
     }
 
-<<<<<<< HEAD
-  // static addResults(the2018Competition){
-  //   let resultsData = Controller.getResultJSON()
-  //   let allResults = resultsData.results
-  //   for (let aResult of allResults) {
-  //     the2018Competition.setResult(aResult.)
-  //   }
-  // }
-=======
     let allResults = resultsData.results
     for (let aResult of allResults) {
       the2018Competition.addResult(aResult.homeTeamRank, aResult.awayTeamRank, aResult.homeTeamScore, aResult.awayTeamScore, aResult.homeTeamTries, aResult.awayTeamTries)
@@ -1262,5 +1248,4 @@ class Controller { // eslint-disable-line no-unused-vars
     return the2018Competition
   }
 
->>>>>>> 40694a36b672f84c71c2e244a59b51f3ceded6ff
 }
