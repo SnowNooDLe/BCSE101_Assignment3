@@ -34,6 +34,11 @@ class Competition { // eslint-disable-line no-unused-vars
     }
     return foundGame
   }
+
+  setResult() {
+    
+  }
+  // until here
   addGame (newRound, newHomeTeamRank, newAwayTeamRank, newWhenString) { // newYear, newMonth, newDay, newMinute) {
     // let when = new Date(newYear, newMonth, newDay, newMinute)
     let when = new Date(newWhenString)
