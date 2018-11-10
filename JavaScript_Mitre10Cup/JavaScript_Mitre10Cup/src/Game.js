@@ -4,10 +4,12 @@ class Game {  // eslint-disable-line no-unused-vars
     this.round = newRound
     this.when = newWhen
     this.myHomeTeam = theHomeTeam
+    // added code
     this.homeTeamScore = 0
     this.awayTeamScore = 0
     this.homeTeamTries = 0
     this.awayTeamTries = 0
+
     this.myAwayTeam = theAwayTeam
     if (theHomeTeam) {
       this.venue = theHomeTeam.getVenue()
@@ -17,8 +19,8 @@ class Game {  // eslint-disable-line no-unused-vars
   }
 
   setResult (newTeamAScore, newTeamBScore) {
-    this.teamAScore = newTeamAScore
-    this.teamBScore = newTeamBScore
+    this.homeTeamScore = newTeamAScore
+    this.awayTeamScore = newTeamBScore
   }
 
   getDate (aDate) {
@@ -63,6 +65,42 @@ class Game {  // eslint-disable-line no-unused-vars
     result += `${this.getTime(this.when)} ${this.getMonth(this.when)}${View.NEWLINE()}${View.TAB()}${this.myHomeTeam.name} v ${this.myAwayTeam.name} at ${this.venue}`
     return result
   }
+  // added code
+  getResult () {
+    let result = this.getDate(this.when)
+    let paddingNeeded = 13 - result.length
+    let padding = View.SPACES(paddingNeeded)
+    result += padding
+    // console.log("Whats my score")
+    // console.log(this.homeTeamScore)
+    result += `Result is ${this.myHomeTeam.name} ${this.homeTeamScore} : ${this.awayTeamScore} ${this.myAwayTeam.name}`
+    // console.log(result)
+    return result
+  }
+
+  addingScores (aGame, homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries) {
+    this.setResult(homeTeamScore, awayTeamScore)
+    aGame.myHomeTeam.for += homeTeamScore
+    aGame.myHomeTeam.against += awayTeamScore
+    if (homeTeamTries >= 4) {
+      aGame.myHomeTeam.BP1 += 1
+    }
+
+    if (awayTeamScore - homeTeamScore <= 7 && awayTeamScore - homeTeamScore >= 1 ) {
+      aGame.myHomeTeam.BP2 += 1
+    }
+
+    aGame.myAwayTeam.for += awayTeamScore
+    aGame.myAwayTeam.against += homeTeamScore
+    if (awayTeamTries >= 4) {
+      aGame.myAwayTeam.BP1 += 1
+    }
+
+    if (homeTeamScore - awayTeamScore <= 7 && homeTeamScore - awayTeamScore >= 1 ) {
+      aGame.myAwayTeam.BP2 += 1
+    }
+  }
+  // --------------------------------------------------------------------------
   hasTeam (targetTeamName) {
     return this.myHomeTeam.name === targetTeamName || this.myAwayTeam.name === targetTeamName
   }

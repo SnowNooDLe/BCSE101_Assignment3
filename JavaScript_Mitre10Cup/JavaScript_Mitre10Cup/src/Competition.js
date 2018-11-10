@@ -26,8 +26,14 @@ class Competition { // eslint-disable-line no-unused-vars
 
   // added code
   findGame (targetHomeTeamRank, targetAwayTeamRank) {
-    let foundGame = NONE
+    let foundGame
     for (let aGame of this.allMyGames) {
+      // try to match the dateTime based on given addREsult.js but doesnt seem working
+      // will provide photo of console.log seperate
+      // console.log(aGame.when)
+      // console.log(targetDateTime)
+      // console.log(aGame.when - targetDateTime)
+      // console.log(aGame.when == targetDateTime)
       if (aGame.myHomeTeam.rank === targetHomeTeamRank && aGame.myAwayTeam.rank === targetAwayTeamRank) {
         foundGame = aGame
       }
@@ -35,10 +41,56 @@ class Competition { // eslint-disable-line no-unused-vars
     return foundGame
   }
 
+<<<<<<< HEAD
   setResult() {
     
   }
   // until here
+=======
+  addResult (homeTeamRank, awayTeamRank, homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries) {
+    // console.log(when)
+    let aGame = this.findGame(homeTeamRank, awayTeamRank)
+    // aGame.setResult(homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries)
+    // console.log(aGame)
+    if (homeTeamScore > awayTeamScore) {
+      aGame.myHomeTeam.win += 1
+      aGame.myAwayTeam.lose += 1
+    }
+    else if (homeTeamScore == awayTeamScore) {
+      aGame.myHomeTeam.draw += 1
+      aGame.myAwayTeam.draw += 1
+    }
+    else {
+      aGame.myHomeTeam.lose += 1
+      aGame.myAwayTeam.win += 1
+    }
+    aGame.addingScores(aGame, homeTeamScore, awayTeamScore, homeTeamTries, awayTeamTries)
+    // console.log(aGame.myHomeTeam.lose)
+  }
+
+  getStandings() {
+    let result = `${View.NEWLINE()}Get Standings ${View.NEWLINE()}Premiership Division${View.NEWLINE()}`
+    // Mike emailed me to order in points, but unfortunately, points not working like we had issue during practical test.
+    this.allMyPremiershipTeams.sort(function(a, b){return b.win-a.win});
+    for (let aTeam of this.allMyPremiershipTeams) {
+      aTeam.getDiff()
+      aTeam.getPoints()
+      result += `TEAM: ${aTeam.name} WIN: ${aTeam.win} DRAW: ${aTeam.draw} LOSS: ${aTeam.lose} | FOR: ${aTeam.for} AGAINST: ${aTeam.against} DIFF: ${aTeam.diff} `
+      result += `| BP1: ${aTeam.BP1} BP2: ${aTeam.BP2} POINTS: ${aTeam.points} ${View.NEWLINE()}`
+    }
+    result += 'Championship Division' + View.NEWLINE()
+    this.allMyChampionshipTeams.sort(function(a, b){return b.win-a.win});
+    for (let aTeam of this.allMyChampionshipTeams) {
+      aTeam.getDiff()
+      aTeam.getPoints()
+      result += `TEAM: ${aTeam.name} WIN: ${aTeam.win} DRAW: ${aTeam.draw} LOSS: ${aTeam.lose} | FOR: ${aTeam.for} AGAINST: ${aTeam.against} DIFF: ${aTeam.diff} `
+      result += `| BP1: ${aTeam.BP1} BP2: ${aTeam.BP2} POINTS: ${aTeam.points} ${View.NEWLINE()}`
+    }
+    return result
+  }
+  // --------------------------------------------------------------------------
+
+>>>>>>> 40694a36b672f84c71c2e244a59b51f3ceded6ff
   addGame (newRound, newHomeTeamRank, newAwayTeamRank, newWhenString) { // newYear, newMonth, newDay, newMinute) {
     // let when = new Date(newYear, newMonth, newDay, newMinute)
     let when = new Date(newWhenString)
@@ -67,6 +119,7 @@ class Competition { // eslint-disable-line no-unused-vars
         result += `Week ${week}. ${aGame.getWhen()} - ${aGame.getSunday()}${View.NEWLINE()}`
       }
       result += aGame + View.NEWLINE()
+      result += aGame.getResult() + View.NEWLINE()
     }
     return result
   }
@@ -74,7 +127,6 @@ class Competition { // eslint-disable-line no-unused-vars
     let result = `${View.NEWLINE()}CANTERBURY GAMES${View.NEWLINE()}`
     for (let aGame of this.allMyGames) {
       if (aGame.hasTeam('Canterbury')) {
-        console.log(this.allMyGames.indexOf(aGame))
         result += aGame.get() + View.NEWLINE()
       }
     }
@@ -91,11 +143,11 @@ class Competition { // eslint-disable-line no-unused-vars
     return result
   }
   getAll () {
-    let result = this.getGames()
-    // let result = this.getDivisions()
-    // result += this.getGames()
+    let result = this.getDivisions()
+    result += this.getGames()
     // result += this.getCanterburyGames()
     // result += this.getCrossOverGames()
+    result += this.getStandings()
     return result
   }
 }
